@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motio
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
@@ -42,9 +43,7 @@ const Header = () => {
       >
         <motion.div
           className={`w-full transition-all duration-700 ease-out ${
-            isScrolled
-              ? "max-w-5xl"
-              : "max-w-7xl"
+            isScrolled ? "max-w-5xl" : "max-w-7xl"
           }`}
         >
           <div
@@ -55,115 +54,111 @@ const Header = () => {
             }`}
           >
             <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="relative group z-50">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2"
-            >
-              <div className="relative">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 100 100"
-                  className="text-brand"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M35 30 L15 50 L35 70"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M55 30 L45 70"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M65 30 L85 50 L65 70"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <div className="absolute inset-0 bg-brand/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <span className="text-xl md:text-2xl font-black tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-                Street2Site
-              </span>
-            </motion.div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navItems.map((item, index) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                isActive={location.pathname === item.path}
-                onHover={setHoveredLink}
-                index={index}
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
-
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative px-6 py-2.5 rounded-full bg-brand text-white font-bold text-sm overflow-hidden group shadow-lg shadow-brand/30"
-              >
-                <span className="relative z-10">Start Project</span>
-                {/* Shimmer effect */}
+              {/* Logo */}
+              <Link to="/" className="relative group z-50">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                  animate={{
-                    x: ["-200%", "200%"],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 1,
-                    ease: "linear",
-                  }}
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-brand opacity-0 group-hover:opacity-100 transition-opacity" style={{ filter: 'brightness(1.2)' }} />
-              </motion.button>
-            </Link>
-          </div>
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center gap-2"
+                >
+                  <div className="relative">
+                    <img
+                      src="/logo.png"
+                      alt="Street2Site Logo"
+                      className="
+    h-9 w-auto
+    md:h-10
+    object-contain
+    
+  "
+                    />{" "}
+                    <div className="absolute inset-0 bg-brand/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <span className="text-xl md:text-2xl font-black tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+                    Street2Site
+                  </span>
+                </motion.div>
+              </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden z-50 relative w-10 h-10 flex items-center justify-center"
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <motion.span
-                animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full origin-center"
-              />
-              <motion.span
-                animate={isMobileMenuOpen ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
-                className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full"
-              />
-              <motion.span
-                animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full origin-center"
-              />
-            </div>
-          </button>
+              {/* Desktop Navigation */}
+              <nav className="hidden lg:flex items-center gap-1">
+                {navItems.map((item, index) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    isActive={location.pathname === item.path}
+                    onHover={setHoveredLink}
+                    index={index}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </nav>
+
+              {/* CTA Button */}
+              <div className="hidden lg:flex items-center gap-4">
+                <Link to="/contact">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative px-6 py-2.5 rounded-full bg-brand text-white font-bold text-sm overflow-hidden group shadow-lg shadow-brand/30"
+                  >
+                    <span className="relative z-10">Start Project</span>
+                    {/* Shimmer effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                      animate={{
+                        x: ["-200%", "200%"],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatDelay: 1,
+                        ease: "linear",
+                      }}
+                    />
+                    {/* Hover overlay */}
+                    <div
+                      className="absolute inset-0 bg-brand opacity-0 group-hover:opacity-100 transition-opacity"
+                      style={{ filter: "brightness(1.2)" }}
+                    />
+                  </motion.button>
+                </Link>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="lg:hidden z-50 relative w-10 h-10 flex items-center justify-center"
+                aria-label="Toggle menu"
+              >
+                <div className="w-6 h-5 flex flex-col justify-between">
+                  <motion.span
+                    animate={
+                      isMobileMenuOpen
+                        ? { rotate: 45, y: 8 }
+                        : { rotate: 0, y: 0 }
+                    }
+                    className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full origin-center"
+                  />
+                  <motion.span
+                    animate={
+                      isMobileMenuOpen
+                        ? { opacity: 0, x: -10 }
+                        : { opacity: 1, x: 0 }
+                    }
+                    className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full"
+                  />
+                  <motion.span
+                    animate={
+                      isMobileMenuOpen
+                        ? { rotate: -45, y: -8 }
+                        : { rotate: 0, y: 0 }
+                    }
+                    className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full origin-center"
+                  />
+                </div>
+              </button>
             </div>
           </div>
         </motion.div>

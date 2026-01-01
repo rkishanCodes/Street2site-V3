@@ -55,13 +55,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <motion.p 
-            variants={itemVariants}
-            className="text-sm font-semibold uppercase tracking-wider text-orange-600"
-          >
-            Street2Site
-          </motion.p>
-
+      
           <motion.h1 
             variants={headlineVariants}
             className="text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] text-slate-900 tracking-tight"
