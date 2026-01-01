@@ -134,25 +134,14 @@ const HomePage = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-orange-900 via-orange-800 to-orange-900" />
-        
+
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-700 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-amber-700 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 text-center px-6 max-w-5xl">
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-8 bg-gradient-to-r from-amber-300 via-orange-200 to-amber-400 bg-clip-text text-transparent drop-shadow-2xl">
-            Ready when you are!
-          </h1>
-          <p className="text-xl md:text-2xl text-orange-100 mb-12 max-w-2xl mx-auto">
-            Let's build something amazing together. Start your project today.
-          </p>
-          <button className="group relative rounded-full bg-white px-10 py-5 text-lg font-bold text-orange-900 shadow-2xl shadow-orange-950/50 transition-all hover:bg-orange-50 hover:scale-105">
-            <span className="relative z-10">Get Started Now</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-200 to-amber-200 opacity-0 group-hover:opacity-20 transition-opacity" />
-          </button>
+          <div
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-amber-700 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
         </div>
       </section>
     </div>

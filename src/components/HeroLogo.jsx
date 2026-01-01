@@ -106,7 +106,7 @@ export default function HeroLogo() {
       className="relative w-full h-full flex items-center justify-center"
     >
       {/* Clean white background with subtle shadow */}
-      <div className="absolute inset-0 bg-white rounded-3xl shadow-2xl shadow-slate-900/10 border border-slate-100" />
+      <div className="absolute inset-0  " />
       
       {/* Subtle orange glow */}
       <div className="absolute inset-[15%] bg-gradient-to-br from-orange-50 via-white to-orange-50/50 rounded-2xl blur-xl opacity-60" />
